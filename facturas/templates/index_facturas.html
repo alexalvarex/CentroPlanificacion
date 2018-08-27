@@ -1,0 +1,74 @@
+{% extends "base_in.html" %}
+{% load static %}
+{% block container %}
+<div class="container">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <img src="{% static 'img/Logo2.png' %}" alt="">
+          <h1 class="jumbotron-heading">Facturación Centro de Planificación</h1>
+          <p class="lead text-muted">Gestiona y controla las ordenes.</p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Orden de Servicio</h2>
+                  <hr>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'orden_servicio' %}" class="btn btn-primary">Ingresar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Orden Interna</h2>
+                  <hr>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'orden_interna' %}" class="btn btn-primary">Ingresar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Configuración</h2>
+                  <p class="card-text">Configura el mes actual y la fecha máxima.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'configuracion' %}" class="btn btn-primary">Ingresar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Historial y estados</h2>
+                  <p class="card-text">Mira el historial y opciones de interés.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'resultados' %}" class="btn btn-primary">Ingresar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  
+{% endblock container %}

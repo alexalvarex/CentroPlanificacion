@@ -1,0 +1,16 @@
+{% extends "base_login.html" %}
+{% load static %}
+{% block container %}
+    <form class="form-signin" action="/account/login/" method="post">
+    {% csrf_token %}
+      <img class="mb-4" src="{% static 'img/logo2.png' %}" alt="" width="300" height="100">
+      <h2 class="h3 mb-3 font-weight-normal">Por favor inicia sesión</h2>
+      <h4>{{username}}</h4>
+              <input type="hidden" name="username" id="username" value="{{ username }}">
+            {{ form.password }}
+      <div class="checkbox mb-3">
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
+      <p class="mt-5 mb-3 text-muted">&copy; Azucarera La Grecia S.A. de C.V. 2018</p>
+      </form>
+{% endblock %}

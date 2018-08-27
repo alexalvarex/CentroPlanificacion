@@ -1,0 +1,71 @@
+{% extends "base_in.html" %}
+
+{% block container %}
+<div class="container">
+  <br>
+  <h1 style="text-align:center; font-family:Lucida Console, Monaco, monospace">Sistema Gestor de Taller</h1>
+  <hr>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card">
+          <img class="img-fluid" src="https://cdn3.iconfinder.com/data/icons/illustricon-tech/512/graphics.stats-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Estadísticas</h4>
+              <a href="" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+          <img class="img-fluid" src="https://cdn1.iconfinder.com/data/icons/business-productivity-set-2/100/Line_Icons_Misc_NEW-03-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Usuarios</h4>
+              <a href="{% url 'usuarios' %}" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+         <img class="img-fluid" src="https://cdn2.iconfinder.com/data/icons/flat-icons-web/40/Tools-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Bodega</h4>
+              <a href="" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="col-md-4">
+      <div class="card">
+         <img class="img-fluid" src="https://cdn4.iconfinder.com/data/icons/office-21/128/office-10-2-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Papelería</h4>
+              <a href="" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+          <img class="img-fluid" src="https://cdn0.iconfinder.com/data/icons/money-icons-1/110/Banknote-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Facturas</h4>
+              <a href="" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+          <img class="img-fluid" src="https://cdn3.iconfinder.com/data/icons/transport-icons-2/512/BT_c3tool-512.png" style="width:50%; margin-left:auto; margin-right: auto" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title text-center">Planificación</h4>
+              <a href="" class="btn btn-info">Ver Más</a>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock container %}

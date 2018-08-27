@@ -1,0 +1,212 @@
+{% extends "base_in.html" %}
+
+{% load static %}
+
+{% block container %}
+
+<div class="container">
+		<div class="py-5 text-center">
+	        <img class="d-block mx-auto mb-4" src="{% static 'img/Logo2.png' %}" alt="" width="150" height="150">
+	        <h1>Resultados</h1>
+	        <p class="lead">Mira y analiza la información que se ha ingresado en el mes de {{confiactual.mes}}.</p>
+	        <a id="btnactuales" class="btn btn-primary">General</a>
+	        <a id="btngeneral" class="btn btn-primary">Mes Actual</a>
+	        <hr>
+      	</div>
+
+    <div class="album py-5 bg-light actuales">
+      		<div class="py-5 text-center">
+		        <h1>En el mes actual.</h1>
+		        <hr>
+	      	</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Ordenes</h2>
+                  	<input id="cantos" hidden="" type="text" value="{{cantos}}">
+                  	<input id="cantoi" hidden="" type="text" value="{{cantoi}}">
+                  	<canvas id="myChart" width="400" height="400"></canvas>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Familias con más ordenes</h2>
+                  	<input id="cant501" hidden="" type="text" value="{{cant501}}">
+                  	<input id="cant502" hidden="" type="text" value="{{cant502}}">
+                  	<input id="cant503" hidden="" type="text" value="{{cant503}}">
+                  	<input id="cant504" hidden="" type="text" value="{{cant504}}">
+                  	<input id="cant505" hidden="" type="text" value="{{cant505}}">
+                  	<input id="cant506" hidden="" type="text" value="{{cant506}}">
+                  	<input id="cant507" hidden="" type="text" value="{{cant507}}">
+                  	<input id="cant508" hidden="" type="text" value="{{cant508}}">
+                  	<input id="cant509" hidden="" type="text" value="{{cant509}}">
+                  	<input id="cant510" hidden="" type="text" value="{{cant510}}">
+                  	<input id="cant511" hidden="" type="text" value="{{cant511}}">
+                  	<input id="cant512" hidden="" type="text" value="{{cant512}}">
+                  	<input id="cant513" hidden="" type="text" value="{{cant513}}">
+                  	<input id="cant508TS" hidden="" type="text" value="{{cant508TS}}">
+                  	
+                  	<canvas id="familyChart" width="400" height="400"></canvas>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Motivo de Ordenes</h2>
+                  	<input hidden="" id="malaop" type="text" value="{{malaop}}">
+                  	<input hidden="" id="accidente" type="text" value="{{accidente}}">
+                  	<input hidden="" id="gasto" type="text" value="{{gasto}}">
+                  	<p><strong>Motivos con mayor cantidad en ordenes.</strong></p>
+                  	<canvas id="gastoChart" width="400" height="400"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+          	<div class="col-md-12">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Proveedores</h2>
+                  	<input hidden="" id="cantos" type="text" value="{{provemax}}">
+                  	<p><strong>Proveedores con mayor cantidad de ordenes.</strong></p>
+                  	<ul class="list-group list-group-flush">
+                  		{% for pro in proveedores  %}
+                  			{% for p in provemax  %}
+                  				{% if pro.id == p.proveedor %}
+                  					<li class="list-group-item"><strong>Proveedor:</strong> {{pro}} -- <strong>Cantidad:</strong> {{p.cant_prov}}</li>
+                  				{% endif %}
+                  			{% endfor %}
+                  		{% endfor %}
+                  	</ul>
+                  	<hr>
+                  	<p><strong>Proveedores con mayor monto en Lps.</strong></p>
+                  	<ul class="list-group list-group-flush">
+                  		{% for pro in proveedores  %}
+                  			{% for p in provemont  %}
+                  				{% if pro.id == p.proveedor %}
+                  					<li class="list-group-item"><strong>Proveedor:</strong> {{pro}} -- <strong>Cantidad:</strong> Lps. {{p.monto_prov}}</li>
+                  				{% endif %}
+                  			{% endfor %}
+                  		{% endfor %}
+                  	</ul>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="album py-5 bg-light general">
+      		<div class="py-5 text-center">
+		        <h1>Resultados generales.</h1>
+		        <hr>
+	      	</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Ordenes</h2>
+                  	<input id="cantos1" hidden="" type="text" value="{{cantos1}}">
+                  	<input id="cantoi1" hidden="" type="text" value="{{cantoi1}}">
+                  	<canvas id="myChart1" width="400" height="400"></canvas>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Familias con más ordenes</h2>
+                  	<input id="cant5011" hidden="" type="text" value="{{cant5011}}">
+                  	<input id="cant5021" hidden="" type="text" value="{{cant5021}}">
+                  	<input id="cant5031" hidden="" type="text" value="{{cant5031}}">
+                  	<input id="cant5041" hidden="" type="text" value="{{cant5041}}">
+                  	<input id="cant5051" hidden="" type="text" value="{{cant5051}}">
+                  	<input id="cant5061" hidden="" type="text" value="{{cant5061}}">
+                  	<input id="cant5071" hidden="" type="text" value="{{cant5071}}">
+                  	<input id="cant5081" hidden="" type="text" value="{{cant5081}}">
+                  	<input id="cant5091" hidden="" type="text" value="{{cant5091}}">
+                  	<input id="cant5101" hidden="" type="text" value="{{cant5101}}">
+                  	<input id="cant5111" hidden="" type="text" value="{{cant5111}}">
+                  	<input id="cant5121" hidden="" type="text" value="{{cant5121}}">
+                  	<input id="cant5131" hidden="" type="text" value="{{cant5131}}">
+                  	<input id="cant508TS1" hidden="" type="text" value="{{cant508TS1}}">
+                  	
+                  	<canvas id="familyChart1" width="400" height="400"></canvas>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Motivo de Ordenes</h2>
+                  	<input hidden="" id="malaop1" type="text" value="{{malaop1}}">
+                  	<input hidden="" id="accidente1" type="text" value="{{accidente1}}">
+                  	<input hidden="" id="gasto1" type="text" value="{{gasto1}}">
+                  	<p><strong>Motivos con mayor cantidad en ordenes.</strong></p>
+                  	<canvas id="gastoChart1" width="400" height="400"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+          	<div class="col-md-12">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h2>Proveedores</h2>
+                  	<input hidden="" id="cantos" type="text" value="{{provemax1}}">
+                  	<p><strong>Proveedores con mayor cantidad de ordenes.</strong></p>
+                  	<ul class="list-group list-group-flush">
+                  		{% for pro in proveedores  %}
+                  			{% for p in provemax1  %}
+                  				{% if pro.id == p.proveedor %}
+                  					<li class="list-group-item"><strong>Proveedor:</strong> {{pro}} -- <strong>Cantidad:</strong> {{p.cant_prov}}</li>
+                  				{% endif %}
+                  			{% endfor %}
+                  		{% endfor %}
+                  	</ul>
+                  	<hr>
+                  	<p><strong>Proveedores con mayor monto en Lps.</strong></p>
+                  	<ul class="list-group list-group-flush">
+                  		{% for pro in proveedores  %}
+                  			{% for p in provemont1  %}
+                  				{% if pro.id == p.proveedor %}
+                  					<li class="list-group-item"><strong>Proveedor:</strong> {{pro}} -- <strong>Cantidad:</strong> Lps. {{p.monto_prov}}</li>
+                  				{% endif %}
+                  			{% endfor %}
+                  		{% endfor %}
+                  	</ul>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock container %}
+
+{% block js %}
+	<script>
+		$(document).ready(function(){
+		    $("#btnactuales").click(function(){
+		        alert("The paragraph was clicked.");
+		    });
+		});
+	</script>
+{% endblock js %}
